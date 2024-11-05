@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase démo</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="bundle.js"></script>
+</head>
+<body>
+    <h1>Factures</h1>
+
+    <!-- Bouton pour afficher le formulaire -->
+    <button id="showFormButton">Ajouter une facture</button>
+
+    <!-- Formulaire d'ajout de facture, masqué par défaut -->
+    <form id="addFacture" style="display: none;">
+        <div>
+            <label for="number">Numéro</label>
+            <input 
+                type="text" 
+                name="number" 
+                id="number" 
+                placeholder="Entrez le numéro de la facture" 
+            />
+        </div>
+        <div>
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="">Choisissez un status</option>
+                <option value="A payer">A payer</option>
+                <option value="Payé">Payé</option>
+            </select>
+        </div>
+        <div>
+            <label for="cost">Coût</label>
+            <input 
+                type="number" 
+                name="cost" 
+                id="cost" 
+                placeholder="Entrez le coût de la facture" 
+                step="0.01" 
+                min="0" 
+            />
+        </div>
+        <div>
+            <button type="submit">Enregistrer</button>
+            <button type="button" id="cancelFormButton">Annuler</button>
+        </div>
+    </form>
+
+    <table id="listFactures">
+        <thead>
+            <tr>
+                <th>Numéro</th>
+                <th>Status</th>
+                <th>Coût</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Les factures seront injectées ici -->
+        </tbody>
+    </table>
+</body>
+</html>
